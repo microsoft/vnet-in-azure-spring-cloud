@@ -19,6 +19,8 @@ subscription, you can activate your
 or sign up for a 
 [free Azure account]((https://azure.microsoft.com/free/)).
 
+Azure Portal link: https://ms.portal.azure.com/?AppPlatformExtension=vnet
+
 In addition, you will need the following:
 
 | [Azure CLI version 2.0.67 or higher](https://docs.microsoft.com/cli/azure/install-azure-cli?view=azure-cli-latest) 
