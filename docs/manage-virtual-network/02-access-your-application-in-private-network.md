@@ -28,7 +28,7 @@ To link the private DNS zone to the virtual network, you need to create a virtua
 
 4. Type **azure-spring-cloud-dns-link** for the **Link name**.
 
-5. For **Virtual network**, select the virtual network you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](deploy-azure-spring-cloud-in-your-vnet.md).
+5. For **Virtual network**, select the virtual network you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](01-deploy-azure-spring-cloud-in-your-vnet.md).
 
     ![](../../images/manage-virtual-network/private-dns-zone-link.png)
 
@@ -38,7 +38,7 @@ To link the private DNS zone to the virtual network, you need to create a virtua
 
 To use the private DNS zone to translate/resolve DNS, you need to create an "A" type record in the zone.
 
-1. Select the virtual network resource you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](deploy-azure-spring-cloud-in-your-vnet.md).
+1. Select the virtual network resource you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](01-deploy-azure-spring-cloud-in-your-vnet.md).
 
 2. In the **Connected devices** search box, enter *kubernetes-internal*.
 
@@ -80,4 +80,4 @@ After following the guide of [Build and deploy microservice applications](https:
 
 ## Next
 
-- [Make your application accessible on Internet](make-your-application-accessible-on-internet.md)
+- [Make your application accessible on Internet](03-make-your-application-accessible-on-internet.md)

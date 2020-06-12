@@ -114,4 +114,4 @@ Those network resources are connected to your virtual network created above.
 
 ## Next
 
-- [Access your application in private network](access-your-application-in-private-network.md)
+- [Access your application in private network](02-access-your-application-in-private-network.md)

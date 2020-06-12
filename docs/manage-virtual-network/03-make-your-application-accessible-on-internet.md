@@ -8,7 +8,7 @@ When an Azure Spring Cloud service instance is deployed in your own virtual netw
 
 ## Define variables
 
-Define variables for the resource group and virtual network you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](deploy-azure-spring-cloud-in-your-vnet.md). Customize the values based on your real environment.
+Define variables for the resource group and virtual network you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](01-deploy-azure-spring-cloud-in-your-vnet.md). Customize the values based on your real environment.
 
 ```
 SUBSCRIPTION='subscription-id'
