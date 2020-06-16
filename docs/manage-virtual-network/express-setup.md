@@ -1,4 +1,4 @@
-# Express Setup
+# Express Setup (WIP)
 
 This document will guide you to deploy Spring microservices in your own Azure Virtual Network using Azure Spring Cloud and MySQL, and expose those microservices on Internet by integrating with Azure Application Gateway and Azure Firewall.
 
@@ -348,4 +348,4 @@ az network vnet subnet create \
     --address-prefixes 10.1.4.0/24
 ```
 
-Create a Windows VM on Azure Portal join above VNet.
+Create a Windows VM on Azure Portal join above VNet, and then you can access the applications on the jumpbox machine.

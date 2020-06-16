@@ -65,6 +65,21 @@ Select the virtual network *azure-spring-cloud-vnet* you created.
 
     ![](../../images/manage-virtual-network/grant-azure-spring-cloud-resource-provider-to-vnet.png)
 
+You can also achieve this by running the following az cli command
+
+```
+VIRTUAL_NETWORK_RESOURCE_ID=`az network vnet show \
+    --name ${NAME_OF_VIRTUAL_NETWORK} \
+    --resource-group ${RESOURCE_GROUP_OF_VIRTUAL_NETWORK} \
+    --query "id" \
+    --output tsv`
+
+az role assignment create \
+    --role "Owner" \
+    --scope ${VIRTUAL_NETWORK_RESOURCE_ID} \
+    --assignee e8de9221-a19c-4c81-b814-fd37c6caf9d2
+```
+
 ## Deploy Azure Spring Cloud service instance in the virtual network
 
 1. Open the Azure portal using link https://ms.portal.azure.com/?AppPlatformExtension=vnet.
@@ -114,4 +129,4 @@ Those network resources are connected to your virtual network created above.
 
 ## Next
 
-- [Access your application in private network](02-access-your-application-in-private-network.md)
+- [Deploy Application to Azure Spring Cloud in your VNet](02-deploy-application-to-azure-spring-cloud-in-your-vnet.md)

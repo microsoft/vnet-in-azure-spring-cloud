@@ -78,6 +78,12 @@ After following the guide of [Build and deploy microservice applications](https:
 
 4. The assigned private FQDN (labeled **URL**) is now available. It can only be accessed within the private network, but not on Internet.
 
+## Access application private FQDN
+
+After assign, now you can access the private FQDN of your application in private network. For example, you can create a jumpbox machine in the same virtual network, or a peered virtual network, and on that jumpbox machine the private FQDN is accessible.
+
+![](../../images/manage-virtual-network/access-app-private-fqdn-in-private-network.png)
+
 ## Next
 
-- [Make your application accessible on Internet](03-make-your-application-accessible-on-internet.md)
+- [Expose applications to Internet - using Application Gateway and Azure Firewall](03-make-your-application-accessible-on-internet-appgw.md)

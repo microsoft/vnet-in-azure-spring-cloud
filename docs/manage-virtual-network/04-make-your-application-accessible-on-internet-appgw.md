@@ -1,6 +1,6 @@
-# Make your application accessible on Internet
+# Expose applications to Internet - using Application Gateway and Azure Firewall
 
-When an Azure Spring Cloud service instance is deployed in your own virtual network, applications on the service instance can only be accessible in private network. To make the applications accessible on Internet, you need to integrate with **Azure Application Gateway**.
+When an Azure Spring Cloud service instance is deployed in your own virtual network, applications on the service instance can only be accessible in private network. To make the applications accessible on Internet, you need to integrate with **Azure Application Gateway**, and optionally, with **Azure Firewall**.
 
 ## Prerequisites
 
@@ -31,7 +31,7 @@ az account set --subscription ${SUBSCRIPTION}
 
 ## Create network resources
 
-**Azure Application Gateway** to be created will join the same virtual network as the Azure Spring Cloud service instance. Let's first create a new subnet for the Application Gateway in the virtual network using `az network vnet subnet create`, and also create a Public IP address as the Frontend of the Application Gateway using `az network public-ip create`.
+**Azure Application Gateway** to be created will join the same virtual network as (or peered virtual network to) the Azure Spring Cloud service instance. Let's first create a new subnet for the Application Gateway in the virtual network using `az network vnet subnet create`, and also create a Public IP address as the Frontend of the Application Gateway using `az network public-ip create`.
 
 ```
 APPLICATION_GATEWAY_PUBLIC_IP_NAME='app-gw-public-ip'
@@ -120,3 +120,24 @@ az network public-ip show \
 Copy and paste the public IP address into the address bar of your browser.
 
   ![](../../images/manage-virtual-network/app-gw-public-ip.png)
+
+## Integrate with Azure Firewall (WIP)
+
+If you want to protect the endpoint exposed to public, you can further integrate with **Azure Firewall**.
+
+First, configure the application gateway to have a private frontend IP.
+
+```
+APPLICATION_GATEWAY_PRIVATE_IP='10.1.2.10'
+az network application-gateway frontend-ip create \
+    --gateway-name ${APPLICATION_GATEWAY_NAME} \
+    --name appGatewayPrivateFrontendIP \
+    --resource-group ${RESOURCE_GROUP} \
+    --private-ip-address ${APPLICATION_GATEWAY_PRIVATE_IP} \
+    --subnet ${APPLICATION_GATEWAY_SUBNET_NAME} \
+    --vnet-name ${VIRTUAL_NETWORK_NAME}
+```
+
+Then, create an **Azure Firewall** resource.
+
+TBD.
