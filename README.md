@@ -4,7 +4,7 @@ Deploy Azure Spring Cloud in your own virtual network. Introduction https://aka.
 
 Please getting started from [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](docs/manage-virtual-network/01-deploy-azure-spring-cloud-in-your-vnet.md).
 
-For express setup, please follow [Express Setup](docs/manage-virtual-network/04-express-setup.md).
+For express setup, please follow [Express Setup](docs/manage-virtual-network/express-setup.md).
 
 # Contributing
 

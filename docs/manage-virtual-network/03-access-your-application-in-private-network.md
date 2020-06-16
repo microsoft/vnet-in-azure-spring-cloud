@@ -86,4 +86,4 @@ After assign, now you can access the private FQDN of your application in private
 
 ## Next
 
-- [Expose applications to Internet - using Application Gateway and Azure Firewall](03-make-your-application-accessible-on-internet-appgw.md)
+- [Expose applications to Internet - using Application Gateway and Azure Firewall](04-make-your-application-accessible-on-internet-appgw.md)

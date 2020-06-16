@@ -130,3 +130,5 @@ Those network resources are connected to your virtual network created above.
 ## Next
 
 - [Deploy Application to Azure Spring Cloud in your VNet](02-deploy-application-to-azure-spring-cloud-in-your-vnet.md)
+- [Troubleshooting Azure Spring Cloud in VNET](05-troubleshooting-azure-spring-cloud-in-vnet.md)
+- [Customer Responsibilities for Running Azure Spring Cloud in VNET](06-customer-responsibilities-for-running-azure-spring-cloud-in-vnet.md)
