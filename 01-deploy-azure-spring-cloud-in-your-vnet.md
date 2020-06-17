@@ -52,7 +52,7 @@ Select the virtual network *azure-spring-cloud-vnet* you created.
 
 1. Select **Access control (IAM)**, then select **Add > Add role assignment**.
 
-    ![](../../images/manage-virtual-network/select-access-control-for-vnet.png)
+    ![](images/manage-virtual-network/select-access-control-for-vnet.png)
 
 2. In **Add role assignment**, enter or select this information:
 
@@ -63,7 +63,7 @@ Select the virtual network *azure-spring-cloud-vnet* you created.
 
     Then select *Azure Spring Cloud Resource Provider*, and select **Save**.
 
-    ![](../../images/manage-virtual-network/grant-azure-spring-cloud-resource-provider-to-vnet.png)
+    ![](images/manage-virtual-network/grant-azure-spring-cloud-resource-provider-to-vnet.png)
 
 You can also achieve this by running the following az cli command
 
@@ -99,27 +99,27 @@ az role assignment create \
     |Service runtime subnet                 |Select *service-runtime-subnet*                   |
     |Spring Boot microservice apps subnet   |Select *apps-subnet*                              |
 
-    ![](../../images/manage-virtual-network/creation-blade-networking-tab.png)
+    ![](images/manage-virtual-network/creation-blade-networking-tab.png)
 
 6. Select **Review and create**.
 
 7. Verify your specifications, and click **Create**.
 
-    ![](../../images/manage-virtual-network/creation-blade-verification.png)
+    ![](images/manage-virtual-network/creation-blade-verification.png)
 
 After the deployment, two additional resource groups will be created in your subscription, to host the network resources for the Azure Spring Cloud service instance.
 
 The resource group named as *azure-spring-cloud-service-runtime_{service instance name}_{service instance region}* contains network resources for the Service Runtime of the service instance.
 
-  ![](../../images/manage-virtual-network/service-runtime-resource-group.png)
+  ![](images/manage-virtual-network/service-runtime-resource-group.png)
 
 The resource group named as *azure-spring-cloud-service-runtime_{service instance name}_{service instance region}* contains network resources for your Spring Boot Microservice Applications of the service instance.
 
-  ![](../../images/manage-virtual-network/apps-resource-group.png)
+  ![](images/manage-virtual-network/apps-resource-group.png)
 
 Those network resources are connected to your virtual network created above.
 
-  ![](../../images/manage-virtual-network/vnet-with-connected-device.png)
+  ![](images/manage-virtual-network/vnet-with-connected-device.png)
 
 **Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
 

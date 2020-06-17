@@ -30,7 +30,7 @@ To link the private DNS zone to the virtual network, you need to create a virtua
 
 5. For **Virtual network**, select the virtual network you created in guidance [Deploy Azure Spring Cloud in your Azure virtual network (VNet injection)](01-deploy-azure-spring-cloud-in-your-vnet.md).
 
-    ![](../../images/manage-virtual-network/private-dns-zone-link.png)
+    ![](images/manage-virtual-network/private-dns-zone-link.png)
 
 6. Select **OK**.
 
@@ -44,7 +44,7 @@ To use the private DNS zone to translate/resolve DNS, you need to create an "A" 
 
 3. In the filtered result, find the one connected to the *Service Runtime subnet* of the service instance, and copy its **IP Address**. In this sample, the IP Address is *10.1.0.7*.
 
-    ![](../../images/manage-virtual-network/vnet-search-connected-device.png)
+    ![](images/manage-virtual-network/vnet-search-connected-device.png)
 
 4. Select the **<span>private.azuremicroservices.io</span>** private DNS zone resource created above.
 
@@ -62,7 +62,7 @@ To use the private DNS zone to translate/resolve DNS, you need to create an "A" 
 
     Then select **OK**.
 
-    ![](../../images/manage-virtual-network/private-dns-zone-add-record.png)
+    ![](images/manage-virtual-network/private-dns-zone-add-record.png)
 
 ## Assign private FQDN for your application
 
@@ -74,7 +74,7 @@ After following the guide of [Build and deploy microservice applications](https:
 
 3. Select **Assign Endpoint** to assign a private FQDN to your application. This can take a few minutes.
 
-    ![](../../images/manage-virtual-network/assign-private-fqdn.png)
+    ![](images/manage-virtual-network/assign-private-fqdn.png)
 
 4. The assigned private FQDN (labeled **URL**) is now available. It can only be accessed within the private network, but not on Internet.
 
@@ -82,7 +82,7 @@ After following the guide of [Build and deploy microservice applications](https:
 
 After assign, now you can access the private FQDN of your application in private network. For example, you can create a jumpbox machine in the same virtual network, or a peered virtual network, and on that jumpbox machine the private FQDN is accessible.
 
-![](../../images/manage-virtual-network/access-app-private-fqdn-in-private-network.png)
+![](images/manage-virtual-network/access-app-private-fqdn-in-private-network.png)
 
 ## Next
 

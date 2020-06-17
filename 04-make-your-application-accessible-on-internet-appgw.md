@@ -119,7 +119,7 @@ az network public-ip show \
 
 Copy and paste the public IP address into the address bar of your browser.
 
-  ![](../../images/manage-virtual-network/app-gw-public-ip.png)
+  ![](images/manage-virtual-network/app-gw-public-ip.png)
 
 ## Integrate with Azure Firewall (WIP)
 
