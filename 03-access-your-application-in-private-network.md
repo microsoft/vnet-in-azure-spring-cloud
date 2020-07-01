@@ -84,6 +84,11 @@ After assign, now you can access the private FQDN of your application in private
 
 ![](images/manage-virtual-network/access-app-private-fqdn-in-private-network.png)
 
-## Next
+## Next guide ➡️
 
-- [Expose applications to Internet - using Application Gateway and Azure Firewall](04-make-your-application-accessible-on-internet-appgw.md)
+- [04 - Expose applications to Internet - using Application Gateway and Azure Firewall](04-make-your-application-accessible-on-internet-appgw.md)
+
+## See also
+
+- [05 - Troubleshooting Azure Spring Cloud in VNET](05-troubleshooting-azure-spring-cloud-in-vnet.md)
+- [06 - Customer Responsibilities for Running Azure Spring Cloud in VNET](06-customer-responsibilities-for-running-azure-spring-cloud-in-vnet.md)

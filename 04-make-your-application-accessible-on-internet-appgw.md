@@ -141,3 +141,8 @@ az network application-gateway frontend-ip create \
 Then, create an **Azure Firewall** resource.
 
 TBD.
+
+## See also
+
+- [05 - Troubleshooting Azure Spring Cloud in VNET](05-troubleshooting-azure-spring-cloud-in-vnet.md)
+- [06 - Customer Responsibilities for Running Azure Spring Cloud in VNET](06-customer-responsibilities-for-running-azure-spring-cloud-in-vnet.md)
