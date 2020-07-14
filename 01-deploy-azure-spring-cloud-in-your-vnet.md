@@ -11,6 +11,14 @@ To customize network environment, you can deploy Azure Spring Cloud service inst
 
 - Empower customers to **control** inbound and outbound network communications for Azure Spring Cloud
 
+## Prerequisites
+
+Register Azure Spring Cloud resource provider *Microsoft.AppPlatform* followed by [Register Resource Provider on Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) or by running the following az cli command
+
+```
+az provider register --namespace Microsoft.AppPlatform
+```
+
 ## Virtual network requirements
 
 The virtual network that you deploy your Azure Spring Cloud service instance to must meet the following requirements:

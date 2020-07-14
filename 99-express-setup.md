@@ -34,7 +34,7 @@ In addition, you will need the following:
 Install the Azure Spring Cloud extension for the Azure CLI using the following command
 
 ```bash
-az extension add -s https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.3.0_preview_vnet-py2.py3-none-any.whl
+az extension add -s https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.3.1_preview_vnet-py2.py3-none-any.whl
 ```
 
 If you have already installed, please remove it first
