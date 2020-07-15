@@ -29,7 +29,7 @@ The virtual network that you deploy your Azure Spring Cloud service instance to 
 
 - **Subnets**: The virtual network must include two subnets dedicated to an Azure Spring Cloud service instance: one for Service Runtime and one for your Spring Boot Microservice Applications. There is a one-to-one relationship between these subnets and an Azure Spring Cloud service instance. You cannot share multiple service instances across a single subnet. You must use new subnets for each service instances you deploy.
 
-- **Address space**: One CIDR block up to /28 for Service Runtime subnet and another CIDR block up to /28 for Spring Boot Microservice Applications subnet.
+- **Address space**: One CIDR block up to /28 for Service Runtime subnet and another CIDR block up to /24 for Spring Boot Microservice Applications subnet.
 
 ## Create a virtual network
 
