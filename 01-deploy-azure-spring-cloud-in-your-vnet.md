@@ -31,6 +31,8 @@ The virtual network that you deploy your Azure Spring Cloud service instance to 
 
 - **Address space**: One CIDR block up to /28 for Service Runtime subnet and another CIDR block up to /24 for Spring Boot Microservice Applications subnet.
 
+- **Route table**: The subnets must not have existing route table associated.
+
 ## Create a virtual network
 
 If you already have a virtual network to host Azure Spring Cloud service instance, please skip step 1, 2 and 3. You can start from step 4 to prepare subnets for the virtual network.
