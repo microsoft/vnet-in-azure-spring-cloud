@@ -46,6 +46,17 @@ To use the private DNS zone to translate/resolve DNS, you need to create an "A" 
 
     ![](images/manage-virtual-network/vnet-search-connected-device.png)
 
+   Or you can fetch the IP using the following az cli command:
+
+    ```
+    SPRING_CLOUD_RG= # Resource group name of your Azure Spring Cloud service instance
+    SPRING_CLOUD= # Name of your Azure Spring Cloud service instance
+
+    SERVICE_RUNTIME_RG=`az spring-cloud show -g $SPRING_CLOUD_RG -n $SPRING_CLOUD --query "properties.networkProfile.serviceRuntimeNetworkResourceGroup" -o tsv`
+
+    IP_ADDRESS=`az network lb frontend-ip list --lb-name kubernetes-internal -g $SERVICE_RUNTIME_RG --query "[0].privateIpAddress" -o tsv`
+    ```
+
 4. Select the **<span>private.azuremicroservices.io</span>** private DNS zone resource created above.
 
 5. Select **+ Record set**.
