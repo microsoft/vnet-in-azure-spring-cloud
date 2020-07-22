@@ -133,10 +133,6 @@ Those network resources are connected to your virtual network created above.
 
 **Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
 
-## Limitations
-
-- **Test Endpoint** functionality described in [Verify the staging deployment](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-howto-staging-environment#verify-the-staging-deployment) is not supported for Azure Spring Cloud service instance in your own virtual network.
-
 ## Next guide ➡️
 
 [02 - Deploy Application to Azure Spring Cloud in your VNet](02-deploy-application-to-azure-spring-cloud-in-your-vnet.md)
