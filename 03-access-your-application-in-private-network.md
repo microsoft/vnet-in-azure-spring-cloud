@@ -1,7 +1,6 @@
 # Access your application in private network
 
-When **Assign Endpoint** for applications in an Azure Spring Cloud service instance deployed in your own virtual network, the endpoint is a private FQDN which is only accessible in private network, and functionalities uses the application's endpoint, include **Test Endpoint** described in [Verify the staging deployment](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-howto-staging-environment#verify-the-staging-deployment) and **Log streaming** described in [Stream Azure Spring Cloud app logs in real-time
-](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-howto-log-streaming), are also only works within the private network.
+When **Assign Endpoint** for applications in an Azure Spring Cloud service instance deployed in your own virtual network, the endpoint is a private FQDN which is only accessible in private network, and functionalities uses the application's endpoint, include **Test Endpoint** described in [Verify the staging deployment](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-howto-staging-environment#verify-the-staging-deployment) and **Log streaming** described in [Stream Azure Spring Cloud app logs in real-time](https://docs.microsoft.com/en-us/azure/spring-cloud/spring-cloud-howto-log-streaming), are also only works within the private network.
 
 To access the application endpoint, you need to create an **Azure Private DNS Zone** in your subscription to translate/resolve the private FQDN to its IP address.
 
