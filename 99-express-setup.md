@@ -19,7 +19,7 @@ subscription, you can activate your
 or sign up for a 
 [free Azure account]((https://azure.microsoft.com/free/)).
 
-Azure Portal link: https://ms.portal.azure.com/?AppPlatformExtension=vnet
+Azure Portal link: https://ms.portal.azure.com
 
 In addition, you will need the following:
 
@@ -34,13 +34,13 @@ In addition, you will need the following:
 Install the Azure Spring Cloud extension for the Azure CLI using the following command
 
 ```bash
-az extension add -s https://azureclitemp.blob.core.windows.net/spring-cloud/spring_cloud-0.3.1_preview_vnet-py2.py3-none-any.whl
+az extension add -n spring-cloud
 ```
 
-If you have already installed, please remove it first
+If you have already installed, please update it to the latest version
 
 ```bash
-az extension remove -n spring-cloud
+az extension update -n spring-cloud
 ```
 
 ## Clone and build the repo
