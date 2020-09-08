@@ -1,5 +1,7 @@
 # Customer Responsibilities for Running Azure Spring Cloud in VNET
 
+- test
+
 ## **Don't do** list for customers
 
 - Please **don't** modify resource groups created and owned by Azure Spring Cloud.
