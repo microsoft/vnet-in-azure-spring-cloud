@@ -33,6 +33,6 @@
     | <i>login.microsoftonline.com</i> | HTTPS:443 | Azure Active Directory authentication.​ |
     |<i>packages.microsoft.com</i>    | HTTPS:443 | Microsoft packages repository. |
     | <i>acs-mirror.azureedge.net</i> | HTTPS:443 | Repository required to install required binaries like kubenet and Azure CNI.​ |
-    | <i>mscrl.microsoft.com</i> | HTTPS:80 | Repository required to install required binaries like kubenet and Azure CNI.​ |
-    | <i>crl.microsoft.com</i> | HTTPS:80 | Repository required to install required binaries like kubenet and Azure CNI.​ |
-    | <i>crl3.digicert.com</i> | HTTPS:80 | Repository required to install required binaries like kubenet and Azure CNI.​ |
+    | <i>mscrl.microsoft.com</i> | HTTPS:80 | Required Microsoft Certificate Chain Paths.​ |
+    | <i>crl.microsoft.com</i> | HTTPS:80 | Required Microsoft Certificate Chain Paths.​ ​ |
+    | <i>crl3.digicert.com</i> | HTTPS:80 | 3rd Party SSL Certificate Chain Paths.​  |
