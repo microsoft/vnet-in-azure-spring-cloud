@@ -1,6 +1,6 @@
 # Deploy Azure Spring Cloud in your Azure virtual network with smaller subnets
 
-To solve IP address exhaustion under specific scenarios, Azure Spring Cloud can be deployed into Azure virtual networks with smaller subnets
+Azure Spring Cloud supports to be deployed into Azure virtual networks with smaller subnets, to mitigate the potential risk of IP address exhaustion.  
 
 ## Prerequisites
 
