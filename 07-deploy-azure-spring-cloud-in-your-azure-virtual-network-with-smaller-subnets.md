@@ -100,29 +100,13 @@ az role assignment create \
     | Service runtime subnet               | Select *service-runtime-subnet*  |
     | Spring Boot microservice apps subnet | Select *apps-subnet*             |
 
-    ![](images/manage-virtual-network/creation-blade-networking-tab.png)
+    ![](images/manage-virtual-network/create-azure-spring-cloud-with-smaller-subnet-vnet.png)
 
 6. Select **Review and create**.
 
 7. Verify your specifications, and click **Create**.
 
-    ![](images/manage-virtual-network/creation-blade-verification.png)
-
-After the deployment, two additional resource groups will be created in your subscription, to host the network resources for the Azure Spring Cloud service instance.
-
-The resource group named as *azure-spring-cloud-service-runtime_{service instance name}_{service instance region}* contains network resources for the Service Runtime of the service instance.
-
-  ![](images/manage-virtual-network/service-runtime-resource-group.png)
-
-The resource group named as *azure-spring-cloud-service-runtime_{service instance name}_{service instance region}* contains network resources for your Spring Boot Microservice Applications of the service instance.
-
-  ![](images/manage-virtual-network/apps-resource-group.png)
-
-Those network resources are connected to your virtual network created above.
-
-  ![](images/manage-virtual-network/vnet-with-connected-device.png)
-
-**Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
+    ![](images/manage-virtual-network/create-with-smaller-subnet-validation.png)
 
 ## Limitation
 
@@ -135,3 +119,9 @@ Small subnet range saves IP addresses, but brings limitations to the maximum num
 | /26  | 64        | 56            | <p> App with 1 core: 500<br/> App with 2 cores: 336<br/>  App with 3 cores: 224<br/>  App with 4 cores: 168</p> |
 | /25  | 128       | 120           | <p> App with 1 core: 500<br> App with 2 cores:  500<br>  App with 3 cores:  480<br>  App with 4 cores: 360</p> |
 | /24  | 256       | 248           | <p> App with 1 core: 500<br/> App with 2 cores:  500<br/>  App with 3 cores: 500<br/>  App with 4 cores: 500</p> |
+
+## See also
+
+- [02 - Deploy Application to Azure Spring Cloud in your VNet](02-deploy-application-to-azure-spring-cloud-in-your-vnet.md)
+- [05 - Troubleshooting Azure Spring Cloud in VNET](05-troubleshooting-azure-spring-cloud-in-vnet.md)
+- [06 - Customer Responsibilities for Running Azure Spring Cloud in VNET](
