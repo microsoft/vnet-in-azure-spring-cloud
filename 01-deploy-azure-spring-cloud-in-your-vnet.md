@@ -13,10 +13,11 @@ To customize network environment, you can deploy Azure Spring Cloud service inst
 
 ## Prerequisites
 
-Register Azure Spring Cloud resource provider *Microsoft.AppPlatform* followed by [Register Resource Provider on Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) or by running the following az cli command
+Register Azure Spring Cloud resource provider *Microsoft.AppPlatform* and *Microsoft.ContainerService* followed by [Register Resource Provider on Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) or by running the following az cli command
 
 ```
 az provider register --namespace Microsoft.AppPlatform
+az provider register --namespace Microsoft.ContainerService
 ```
 
 ## Virtual network requirements
