@@ -11,6 +11,11 @@ To customize network environment, you can deploy Azure Spring Cloud service inst
 
 - Empower customers to **control** inbound and outbound network communications for Azure Spring Cloud
 
+```
+!Note
+You can only select your Azure virtual network when create a new Azure Spring Cloud service instance. And you cannot change to use another virtual network after Azure Spring Cloud created.
+```
+
 ## Prerequisites
 
 Register Azure Spring Cloud resource provider *Microsoft.AppPlatform* and *Microsoft.ContainerService* followed by [Register Resource Provider on Azure Portal](https://docs.microsoft.com/en-us/azure/azure-resource-manager/management/resource-providers-and-types#azure-portal) or by running the following az cli command
@@ -58,6 +63,8 @@ If you already have a virtual network to host Azure Spring Cloud service instanc
 6. Select **Review + create**. Leave the rest as default and select **Create**.
 
 ## Grant Azure Spring Cloud service permission to the virtual network
+
+Azure Spring Cloud requires **Owner** permission to your virtual network, in order to grant a dedicated and dynamic service principal on the virtual network for further deployment and maintenance.
 
 Select the virtual network *azure-spring-cloud-vnet* you created.
 
