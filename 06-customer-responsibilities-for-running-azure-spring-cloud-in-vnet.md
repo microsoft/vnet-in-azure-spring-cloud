@@ -16,21 +16,15 @@ By default, Azure Spring Cloud have unrestricted outbound (egress) internet acce
 
   - **Azure Spring Cloud required network rules**
 
-    | Destination Endpoint | Port | Use |
-    |------|------|------|
-    | *:1194 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:1194 | UDP:1194 | Underlying Kubernetes Cluster management. |
-    | *:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:443 | TCP:443 | Azure Spring Cloud service management. |
-    | *:9000 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:9000 | TCP:9000 | Underlying Kubernetes Cluster management. |
-    | *:123 *Or* ntp.ubuntu.com:123 | UDP:123 | NTP time synchronization on Linux nodes. |
-    | *.azure.io:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureContainerRegistry:443 | TCP:443 | Azure Container Registry.<sup>1</sup> |
-    | *.core.windows.net:443 and *.core.windows.net:445 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - Storage:443 and Storage:445 | TCP:443, TCP:445 | *Azure File Storage.<sup>2</sup> |
-    | *.servicebus.windows.net:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - EventHub:443 | TCP:443 | *Azure Event Hub.<sup>3</sup> |
-
-      <sup>1</sup>This can be replaced by enabling *Azure Container Registry* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview).
-
-      <sup>2</sup>This can be replaced by enabling *Azure Storage* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview).
-      
-      <sup>3</sup>This can be replaced by enabling *Azure Event Hubs* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview).
+    | Destination Endpoint | Port | Use | Note |
+    |------|------|------|------|
+    | *:1194 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:1194 | UDP:1194 | Underlying Kubernetes Cluster management. ||
+    | *:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:443 *Or* ServiceInstanceRequiredTraffics:443 (only known after creation) | TCP:443 | Azure Spring Cloud service management. | Information of service instance "requiredTraffics" could be known in resource payload, under "networkProfile" section.  |
+    | *:9000 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureCloud:9000 | TCP:9000 | Underlying Kubernetes Cluster management. ||
+    | *:123 *Or* ntp.ubuntu.com:123 | UDP:123 | NTP time synchronization on Linux nodes. ||
+    | *.azure.io:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - AzureContainerRegistry:443 | TCP:443 | Azure Container Registry. | Can be replaced by enabling *Azure Container Registry* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview). |
+    | *.core.windows.net:443 and *.core.windows.net:445 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - Storage:443 and Storage:445 | TCP:443, TCP:445 | Azure File Storage. | Can be replaced by enabling *Azure Storage* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview). |
+    | *.servicebus.windows.net:443 *Or* [ServiceTag](https://docs.microsoft.com/en-us/azure/virtual-network/service-tags-overview#available-service-tags) - EventHub:443 | TCP:443 | Azure Event Hub. | Can be replaced by enabling *Azure Event Hubs* [service endpoint in virtual network](https://docs.microsoft.com/en-us/azure/virtual-network/virtual-network-service-endpoints-overview). |
 
   - **Azure Spring Cloud required FQDN / application rules**
     - Azure Firewall provides a FQDN Tag "AzureKubernetesService" to simplify all following configurations.
