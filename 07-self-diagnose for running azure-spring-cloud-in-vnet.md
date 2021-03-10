@@ -24,13 +24,13 @@ Different subnets will display the results separately.
 Healthy results:
     ![](images/manage-virtual-network/self-diagostic-dns-healthy.png)
 
-Assuming the context end time is **2021-01-21T11:22:00Z**, and the diagnostic report like the following picture. The latest TIMESTAMP in the **DNS Resolution Table Renderings** is yesterday, more than **30 minutes** from the context end time, the health status will be unknown. Since the health check log may not be sent out because of the blocked network. 
+Assuming the context end time is **2021-03-03T04:20:00Z**, and the diagnostic report like the following picture. The latest TIMESTAMP in the **DNS Resolution Table Renderings** is yesterday, more than **30 minutes** from the context end time, the health status will be unknown. Since the health check log may not be sent out because of the blocked network. 
 
 The unknown health status results contain related documentation, you can click the left angle brackets.
     ![](images/manage-virtual-network/self-diagostic-dns-unknown.png)
 
 
-Assuming the context end time is 2021-01-20T22:22:00Z and you misconfigured your Private DNS Zone record set, you will get a Critical result like `Failed to resolve the Private DNS in subnet xxx`. 
+Assuming the context end time is 2021-03-03T06:00:00Z and you misconfigured your Private DNS Zone record set, you will get a Critical result like `Failed to resolve the Private DNS in subnet xxx`. 
 
 In the **DNS Resolution Table Renderings** you will find the detail message info, you can check your config with that.
     ![](images/manage-virtual-network/self-diagostic-dns-failed.png)
