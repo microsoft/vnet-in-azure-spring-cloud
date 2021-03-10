@@ -37,7 +37,7 @@ The virtual network that you deploy your Azure Spring Cloud service instance to 
 
 - **Address space**: One CIDR block up to /28 for Service Runtime subnet and another CIDR block up to /24 for Spring Boot Microservice Applications subnet.
 
-- **Route table**: The subnets must not have existing route table associated.
+- **Route table**: By default the subnets do not need existing route tables associated. But you have the option to [bring your own route table](#Bring-your-own-route-table).
 
 ## Create a virtual network
 
@@ -140,6 +140,28 @@ Those network resources are connected to your virtual network created above.
   ![](images/manage-virtual-network/vnet-with-connected-device.png)
 
 **Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
+
+## Bring your own route table
+
+Azure Spring Cloud supports bringing your own existing subnets and route tables.
+
+If your custom subnets do not contain route tables, Azure Spring Cloud creates one for each of the subnets and adds rules to them throughout the instance lifecycle. If your custom subnets contain route tables when you create your instance, Azure Spring Cloud acknowledges the existing route tables during instance operations and adds/updates rules accordingly for operations.
+
+```
+!Warning 
+
+Custom rules can be added to the custom route tables and updated. However, rules are added by Azure Spring Cloud which must not be updated or removed. Rules such as 0.0.0.0/0 must always exist on a given route table and map to the target of your internet gateway, such as an NVA or other egress gateway. Take caution when updating rules that only your custom rules are being modified.
+```
+
+### Route table requirements
+
+The route tables to which your custom vnet associated with must meet the following requirements:
+
+- You can associate your Azure route tables with your vnet only when you create a new Azure Spring Cloud service instance. You cannot change to use another route tables after Azure Spring Cloud has been created.
+- Both microservice application subnet and service runtime subnet should both assciate with different route tables or neither of them.
+- Permissions must be assigned before instance creation, ensure you grant Azure Spring Cloud Owner permission to your route tables.
+- The associated route table resource cannot be updated after cluster creation. While the route table resource cannot be updated, custom rules can be modified on the route table.
+- You cannot reuse a route table with multiple instances due to potential conflicting routing rules.
 
 ## Next guide ➡️
 
