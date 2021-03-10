@@ -35,7 +35,7 @@ The virtual network that you deploy your Azure Spring Cloud service instance to 
 
 - **Subnets**: The virtual network must include two subnets dedicated to an Azure Spring Cloud service instance: one for Service Runtime and one for your Spring Boot Microservice Applications. There is a one-to-one relationship between these subnets and an Azure Spring Cloud service instance. You cannot share multiple service instances across a single subnet. You must use new subnets for each service instances you deploy.
 
-- **Address space**: One CIDR block up to /28 for Service Runtime subnet and another CIDR block up to /24 for Spring Boot Microservice Applications subnet.
+- **Address space**: CIDR blocks up to **/28** for both Service Runtime subnet and Spring Boot Microservice Applications subnet.
 
 - **Route table**: By default the subnets do not need existing route tables associated. But you have the option to [bring your own route table](#Bring-your-own-route-table).
 
@@ -56,9 +56,9 @@ If you already have a virtual network to host Azure Spring Cloud service instanc
 
 3. Select **Next: IP Addresses**, and for **IPv4 address space**, enter 10.1.0.0/16.
 
-4. Select **Add subnet**, then enter *service-runtime-subnet* for Subnet name and *10.1.0.0/24* for **Subnet address range**, and select **Add**.
+4. Select **Add subnet**, then enter *service-runtime-subnet* for Subnet name and *10.1.0.0/28* for **Subnet address range**, and select **Add**.
 
-5. Select **Add subnet** again, then enter *apps-subnet* for Subnet name and *10.1.1.0/24* for **Subnet address range**, and select **Add**.
+5. Select **Add subnet** again, then enter *apps-subnet* for Subnet name and *10.1.1.0/28* for **Subnet address range**, and select **Add**.
 
 6. Select **Review + create**. Leave the rest as default and select **Create**.
 
@@ -117,13 +117,13 @@ az role assignment create \
     |Service runtime subnet                 |Select *service-runtime-subnet*                   |
     |Spring Boot microservice apps subnet   |Select *apps-subnet*                              |
 
-    ![](images/manage-virtual-network/creation-blade-networking-tab.png)
+    ![](images/manage-virtual-network/create-azure-spring-cloud-with-smaller-subnet-vnet.png)
 
 6. Select **Review and create**.
 
 7. Verify your specifications, and click **Create**.
 
-    ![](images/manage-virtual-network/creation-blade-verification.png)
+    ![](images/manage-virtual-network/create-with-smaller-subnet-validation.png)
 
 After the deployment, two additional resource groups will be created in your subscription, to host the network resources for the Azure Spring Cloud service instance.
 
@@ -140,6 +140,22 @@ Those network resources are connected to your virtual network created above.
   ![](images/manage-virtual-network/vnet-with-connected-device.png)
 
 **Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
+
+## Using smaller subnet ranges
+
+This table shows the maximum number of app instances Azure Spring Cloud supports using smaller subnet ranges. 
+
+| CIDR | Total IPs | Available IPs | Maximum app instances                                        |
+| ---- | --------- | ------------- | ------------------------------------------------------------ |
+| /28  | 16        | 8             | <p> App with 1 core:  96 <br/> App with 2 cores: 48<br/>  App with 3 cores: 32 <br/> App with 4 cores: 24 </p> |
+| /27  | 32        | 24            | <p> App with 1 core:  228<br/> App with 2 cores: 144<br/>  App with 3 cores: 96 <br/>  App with 4 cores: 72</p> |
+| /26  | 64        | 56            | <p> App with 1 core:  500<br/> App with 2 cores: 336<br/>  App with 3 cores: 224<br/>  App with 4 cores: 168</p> |
+| /25  | 128       | 120           | <p> App with 1 core:  500<br> App with 2 cores:  500<br>  App with 3 cores:  480<br>  App with 4 cores: 360</p> |
+| /24  | 256       | 248           | <p> App with 1 core:  500<br/> App with 2 cores:  500<br/>  App with 3 cores: 500<br/>  App with 4 cores: 500</p> |
+
+For subnets, five IP addresses are reserved by Azure, and at least four addresses are required by Azure Spring Cloud. At least nine IP addresses are required, so /29 and /30 are nonoperational.
+
+For a service runtime subnet, the minimum size is /28. This size has no bearing on the number of app instances.
 
 ## Bring your own route table
 
