@@ -133,9 +133,9 @@ Those network resources are connected to your virtual network created above.
 
 **Important:** Those resource groups are fully managed by Azure Spring Cloud service. Please do **NOT** manually delete or modify any resource inside.
 
-## Limitations
+## Using smaller subnet ranges
 
-Small subnet range saves IP addresses, but brings limitations to the maximum number of App Instances the Azure Spring Cloud can hold. 
+This table shows the maximum number of app instances Azure Spring Cloud supports using smaller subnet ranges. 
 
 | CIDR | Total IPs | Available IPs | Maximum app instances                                        |
 | ---- | --------- | ------------- | ------------------------------------------------------------ |
@@ -144,6 +144,10 @@ Small subnet range saves IP addresses, but brings limitations to the maximum num
 | /26  | 64        | 56            | <p> App with 1 core:  500<br/> App with 2 cores: 336<br/>  App with 3 cores: 224<br/>  App with 4 cores: 168</p> |
 | /25  | 128       | 120           | <p> App with 1 core:  500<br> App with 2 cores:  500<br>  App with 3 cores:  480<br>  App with 4 cores: 360</p> |
 | /24  | 256       | 248           | <p> App with 1 core:  500<br/> App with 2 cores:  500<br/>  App with 3 cores: 500<br/>  App with 4 cores: 500</p> |
+
+For subnets, five IP addresses are reserved by Azure, and at least four addresses are required by Azure Spring Cloud. At least nine IP addresses are required, so /29 and /30 are nonoperational.
+
+For a service runtime subnet, the minimum size is /28. This size has no bearing on the number of app instances.
 
 ## Next guide ➡️
 
