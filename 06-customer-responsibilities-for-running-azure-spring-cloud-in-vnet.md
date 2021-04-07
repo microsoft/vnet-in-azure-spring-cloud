@@ -42,3 +42,10 @@ By default, Azure Spring Cloud have unrestricted outbound (egress) internet acce
     | <i>mscrl.microsoft.com</i> | HTTPS:80 | Required Microsoft Certificate Chain Paths.​ |
     | <i>crl.microsoft.com</i> | HTTPS:80 | Required Microsoft Certificate Chain Paths.​ ​ |
     | <i>crl3.digicert.com</i> | HTTPS:80 | 3rd Party SSL Certificate Chain Paths.​  |
+
+  - Azure Spring Cloud optional FQDN / application rules
+    - Azure Firewall provides a FQDN Tag "AzureKubernetesService" to simplify all following configurations.
+    - Third party APM (Application Performance Management) solutions.
+      | APM provider                       | Network Details                                              |
+      | ---------------------------------- | ------------------------------------------------------------ |
+      | [New Relic](https://newrelic.com/) | [APM Agents](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents) |
