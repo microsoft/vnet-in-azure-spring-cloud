@@ -43,12 +43,12 @@ By default, Azure Spring Cloud have unrestricted outbound (egress) internet acce
     | <i>crl.microsoft.com</i> | HTTPS:80 | Required Microsoft Certificate Chain Paths.​ ​ |
     | <i>crl3.digicert.com</i> | HTTPS:80 | 3rd Party SSL Certificate Chain Paths.​  |
 
-  - Azure Spring Cloud optional FQDN / application rules
+  - Azure Spring Cloud optional FQDN for third party APM (Application Performance Management).
     - Azure Firewall provides a FQDN Tag "AzureKubernetesService" to simplify all following configurations.
-    - Third party APM (Application Performance Management) solutions.
-      | Destination FQDN | Port | Use                                                          |
-      | ---------------- | ---- | ------------------------------------------------------------ |
-      | collector*.newrelic.com | TCP:443/80 | Required networks of New Relic APM agents from US region, also see [APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
-      | collector*.eu01.nr-data.net | TCP:443/80 | Required networks of New Relic APM agents from EU region, also see [APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
-      
+
+    | Destination FQDN | Port | Use                                                          |
+    | ---------------- | ---- | ------------------------------------------------------------ |
+    | collector*.newrelic.com | TCP:443/80 | Required networks of New Relic APM agents from US region, also see [APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
+    | collector*.eu01.nr-data.net | TCP:443/80 | Required networks of New Relic APM agents from EU region, also see [APM Agents Networks](https://docs.newrelic.com/docs/using-new-relic/cross-product-functions/install-configure/networks/#agents). |
+
       
