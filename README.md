@@ -1,3 +1,5 @@
+**This document is deprecated, please refer to http://aka.ms/azure-spring-cloud-vnet-docs for the latest content.**
+
 # Azure Spring Cloud Documentation
 
 Deploy Azure Spring Cloud in your own virtual network. For context and introduction see [VNET in Azure Spring Cloud](./intro/vnet-support-in-azure-spring-cloud-june-2020.pdf).
